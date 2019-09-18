@@ -1,123 +1,136 @@
-$(document).ready(function(){
 
-    $("#start-button").click(function(){
-  
-  // ----------------------------------------------------------------
-  
-   // declaring the value for the timer to 60 seconds
-  
-   // hide the start button and rules
-  
-        var number = 50;
-  
-        alert("The let game begin!");
-  
-      $("#start-button").on("click", start);  // starts the games 
-  
-      $("#submit").on("click", finish);  // submits answers and finishes the game
-  
-      $("#restart").on("click", restart);  // restarts the games 
-  
-  // ----------------------------------------------------------------
-  
-  // functions
-  
-      function start(){
-  
-          counter = setInterval(timer, 1000);
-  
-          showMe(".question");
-  
-          showMe(".answers");
-  
-          showMe("#submit");
-  
-          hideMe("#start-button");
-  
-          hideMe(".rules");
-  
-          hideMe("#restart");
-  
-          hideMe("#results");
-  
-      }
-  
-      function timer(){
-  
-        number-- // decrements the timer by 1
-  
-        $("#show-number").html("<h2>" + number + "</h2>" );
-  
-        if (number === 0){
-  
-          alert("Times Up!")
-  
-          stop(); // calls the stop function
-  
-        }
-  
-      }
-  
-      function stop(){
-  
-          clearInterval(counter); // stops the timer
-  
-          $("#results").show();
-  
-          $("#restart").show();
-  
-          $(".question").hide();
-  
-          $(".answers").hide();
-  
-          $("#submit").hide();
-  
-      }
-  
-      function finish(){
-  
-          number = 1; // if number is equal to 0 number will show -1 so 1 has to be selected
-  
-          clearInterval(counter); // stops the timer
-  
-          timer();
-  
-      }
-  
-  
-  
-      function restart(){
-  
-          number = 50;
-  
-          start();
-  
-      }
-  
-  
-  
-      function hideMe(e) {
-  
-          $(e).hide();
-  
-      }
-  
-      function showMe(e) {
-  
-          $(e).show();
-  
-      }
-  
-  
-  
-  // ----------------------------------------------------------------
-  
-  //calling functions
-  
-        start(); // calls the start function
-  
+$(document).ready(function() {
+
+    var scoreCorrect = 0;
+    
+    
+    
+        $('.question').fadeOut('fast');
+    
+        $('.result').fadeOut('fast');
+    
+    
+    
+        $('#play').click(function() {
+    
+            $(this).fadeOut('fast');
+    
+            $('#questionOne').fadeIn('slow');
+    
+        });
+    
+    
+    
+        $('#submitOne').click(function() {
+    
+            var inputOne = $('#answerOne').val();
+    
+            console.log(inputOne);
+    
+            if (inputOne.toLowerCase() === "adams") {
+    
+                $('#questionOne').fadeOut('fast'),
+    
+                $('#correct').fadeIn('fast'),
+    
+                $('#questionTwo').fadeIn('slow'),
+    
+                scoreCorrect += 1,
+    
+                console.log(scoreCorrect);
+    
+            } else {
+    
+                $('#questionOne').fadeOut('fast'),
+    
+                $('#sorry').fadeIn('slow'),
+    
+                $('#questionTwo').fadeIn('slow');
+    
+                };
+    
+        });
+    
+    
+    
+        $('#submitTwo').click(function() {
+    
+            var inputTwo = $('#answerTwo').val();
+    
+            console.log(inputTwo);
+    
+            if (inputTwo.toLowerCase() === "columbia") {
+    
+                $('#questionTwo').fadeOut('fast'),
+    
+                $('#sorry').fadeOut('fast'),
+    
+                $('#correct').fadeIn('slow'),
+    
+                $('#questionThree').fadeIn('slow'),
+    
+                scoreCorrect += 1,
+    
+                console.log(scoreCorrect);
+    
+            } else {
+    
+                $('#questionTwo').fadeOut('fast'),
+    
+                $('#correct').fadeOut('fast'),
+    
+                $('#sorry').fadeIn('slow'),
+    
+                $('#questionThree').fadeIn('slow');
+    
+                };
+    
+        });
+    
+    
+    
+        $('#submitThree').click(function() {
+    
+            var inputThree = $('#answerThree').val();
+    
+            console.log(inputThree);
+    
+            if ( (inputThree.toLowerCase() === "42") || (inputThree.toLowerCase() === "42nd")) {
+    
+                $('#questionThree').fadeOut('fast'),
+    
+                $('#correct').fadeOut('fast'),
+    
+                $('#sorry').fadeOut('fast'),
+    
+                $('#score').fadeIn('slow'),
+    
+                $('#correctTwo').fadeIn('slow'),
+    
+                scoreCorrect += 1,
+    
+                console.log(scoreCorrect),
+    
+                $('#score').append("<p>You answered " + scoreCorrect +" question correctly out of 3.</p>");
+    
+            } else {
+    
+                $('#questionThree').fadeOut('fast'),
+    
+                $('#correct').fadeOut('fast'),
+    
+                $('#sorry').fadeOut('fast'),
+    
+                $('#sorryTwo').fadeIn('slow'),
+    
+                $('#score').fadeIn('slow'),
+    
+                $('#score').append("<p>You answered " + scoreCorrect +" question correctly out of 3.</p>");
+    
+                };
+    
+        });
+    
+    
+    
     });
-  
-  });
-  
-  

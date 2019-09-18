@@ -1,0 +1,147 @@
+body {
+
+    font-family: Courier New;
+  
+  }
+  
+  
+  
+  a {
+  
+    text-decoration: none;
+  
+  }
+  
+  nav ul li {
+  
+    padding: .5em;
+  
+    display: inline-block;
+  
+    color: #5a5a5a;
+  
+    text-transform: uppercase;
+  
+  }
+  
+  #bird {
+  
+    width: 5em;
+  
+    height:5em;
+  
+  }
+  
+  
+  
+  main {
+  
+    background-image: url(http://s3.amazonaws.com/rapgenius/seattle-skyline-picture.jpg);
+  
+    background-position: center;
+  
+    background-repeat: no-repeat;
+  
+    background-attachment: fixed;
+  
+    background-size: 70em;
+  
+    text-align: center;
+  
+    padding-bottom: 15em
+  
+  }
+  
+  
+  
+  h1 {
+  
+    margin: .3em;
+  
+    font-style: oblique;
+  
+    font-family: serif;
+  
+    font-size: 8em;
+  
+  }
+  
+  
+  
+  h2{
+  
+    font-size: 4em;
+  
+  }
+  
+  
+  
+  #play {
+  
+    background-color: e0e0e0;
+  
+    font-family:courier New;
+  
+    font-weight: bold;
+  
+    font-size: 2.5em;
+  
+  }
+  
+  
+  
+  section {
+  
+    background-color: white;
+  
+    margin: 2em;
+  
+    padding: 2em;
+  
+    height: 10em;
+  
+    width: 25em;
+  
+    color: #5a5a5a;
+  
+    margin-left: 33%;
+  
+  }
+  
+  
+  
+  .result {
+  
+    height: 5em;
+  
+    width: 20em;
+  
+    margin-left: 36%;
+  
+  }
+  
+  
+  
+  #score{
+  
+    height: 10em;
+  
+    width: 20em;
+  
+    margin-left: 36%;
+  
+  }
+  
+  
+  
+  footer{
+  
+    margin: 2em;
+  
+    color: #5a5a5a;
+  
+    font-size: 2em;
+  
+    text-align: center;
+  
+  }
